@@ -49,6 +49,15 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private SpriteRenderer gateSprite;
     private SpriteRenderer effectSprite;
 
+    //Particle System for absorb effect
+    [SerializeField]
+    private ParticleSystem absorbEffect;
+
+    //Vault Indicator Prefab
+    [SerializeField]
+    private SpriteRenderer vaultIndicator;
+
+
     //Function Display
     [Header("Display (don't change for inverse)")]
     [SerializeField]
@@ -59,6 +68,8 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private float alpha; //Display Alpha
     private LineRenderer line; //Line to display
     private bool mouseHover; //Is mouse hovering over gate
+
+   
 
     //Before first frame
     private void Start()
@@ -73,6 +84,14 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         gateSprite = GetComponent<SpriteRenderer>();
         effectSprite = GetComponentInChildren<SpriteRenderer>();
+
+        //Absorb effect should be off by default
+        absorbEffect.Stop();
+
+        //Create vault indicator from prefab
+        vaultIndicator = Instantiate(vaultIndicator);
+        vaultIndicator.transform.position = transform.position;
+        vaultIndicator.enabled = false; //Off by default
 
 
         //Display only needs to be instantiated once, not also for inverse
@@ -89,13 +108,18 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
     //When object enters trigger
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") //If it's the player, they're in range for vault
-        {
-            playerInRange = true;
-        }
-        else if ((!isInverse && rel.isFunction()) || (isInverse && rel.isBijective()) )
+        
+        if ((!isInverse && rel.isFunction()) || (isInverse && rel.isBijective()) )
         {
             //If function/inverse is well-defined:
+
+
+            if (collision.tag == "Player") //If it's the player, they're in range for vault
+            {
+                playerInRange = true;
+                absorbEffect.Play();
+                vaultIndicator.enabled = true;
+            }
 
             ItemPickup item = collision.gameObject.GetComponent<ItemPickup>();
             //If the object that entered is an item drop, and was not just launched by this gate
@@ -110,7 +134,12 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
     //When object exits trigger
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player") playerInRange = false; //If it's the player, they're out of range for vault
+        if (collision.tag == "Player")
+        {
+            playerInRange = false; //If it's the player, they're out of range for vault
+            absorbEffect.Stop();
+            vaultIndicator.enabled = false;
+        }
     }
 
     //Update the function display
