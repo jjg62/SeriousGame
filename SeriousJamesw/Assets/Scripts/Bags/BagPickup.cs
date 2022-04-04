@@ -49,6 +49,7 @@ public class BagPickup : Pickup
             onPodium.currentStoredBag = null;
             onPodium.UpdateConditions(); //Any conditions reliant of the podium should update
             onPodium.StopAllCoroutines(); //Stop bag absorb animation
+            onPodium.absorbEffect.Play(); //Restart particles
         }
         
         HUD.instance.viewSets.Refresh(); //Update the list of bags on HUD

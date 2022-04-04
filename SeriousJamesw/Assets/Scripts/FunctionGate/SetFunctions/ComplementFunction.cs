@@ -55,7 +55,7 @@ public class ComplementFunction : SetFunction
     //What to display in the ConditionDisplay
     public override string GetDisplayString()
     {
-        return "b~U/\\/b";
+        return "b~"+parent.GetIcon()+"/\\/b";
     }
 
     //As long as parent container has an inventory (which can itslef be empty)

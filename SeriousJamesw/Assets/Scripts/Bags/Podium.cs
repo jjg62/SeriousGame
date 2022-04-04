@@ -8,6 +8,8 @@ public class Podium : IInventoryContainer
     private BagManager bags; //Reference to player BagManager
     public BagPickup currentStoredBag;  //Bag currently stored in the podium
 
+    public ParticleSystem absorbEffect; //Particles showing that the podium can absorb a bag
+
     //Before first frame
     private void Start()
     {
@@ -22,6 +24,7 @@ public class Podium : IInventoryContainer
         if(bag != null && currentStoredBag == null) //If object is a dropped bag, and space available
         {
             //Set currently stored bag, give reference of this to the bag for OnDestroy
+            absorbEffect.Stop();
             currentStoredBag = bag;
             bag.onPodium = this;
 

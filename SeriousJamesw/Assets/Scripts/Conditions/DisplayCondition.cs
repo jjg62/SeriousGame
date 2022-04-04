@@ -69,12 +69,11 @@ public class DisplayCondition : MonoBehaviour
             }
 
             //An @ in the string toggles colour mode
-            if (!colourMode && c == '@') {
+            if (c == '@') {
                 colourMode = !colourMode;
             }
-
             //Otherwise, add to total the width of this character's icon
-            if (!textMode && !colourMode)
+            else if (!textMode && !colourMode)
             {
                 if (halfWidthChars.Contains(c))
                 {

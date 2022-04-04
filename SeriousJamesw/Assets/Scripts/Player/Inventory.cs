@@ -123,6 +123,7 @@ public class Inventory : MonoBehaviour
         //Can't drop 'cursed' items - id 4,5,6,7
         if ((int)droppedType > 3)
         {
+            HUD.instance.inventory.PulseSlot(pos, 1.6f, 0.4f); //Make item slot with cursed item pulse
             AudioManager.instance.Play("Fail");
             return;
         }

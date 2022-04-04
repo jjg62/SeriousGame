@@ -53,6 +53,14 @@ public class SetFunctionGate : HasDisplay
     [SerializeField]
     private BagPickup bagPref;
 
+    //Particle System for absorb effect
+    [SerializeField]
+    private ParticleSystem absorbEffect;
+
+    //Vault Indicator Prefab
+    [SerializeField]
+    private SpriteRenderer vaultIndicator;
+
     //Before first frame
     private new void Start()
     {    
@@ -64,6 +72,14 @@ public class SetFunctionGate : HasDisplay
 
         gateSprite = GetComponent<SpriteRenderer>();
         effectSprite = GetComponentInChildren<SpriteRenderer>();
+
+        //Absorb effect should be off by default
+        absorbEffect.Stop();
+
+        //Create vault indicator from prefab
+        vaultIndicator = Instantiate(vaultIndicator);
+        vaultIndicator.transform.position = transform.position;
+        vaultIndicator.enabled = false; //Off by default
 
         if (!isInverse)
         {
@@ -78,14 +94,18 @@ public class SetFunctionGate : HasDisplay
     //When object enters trigger
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            //If it was the player, they are now in range
-            playerInRange = true;
-        }
-        else if (setFunc.CanApply() && !isInverse || (isInverse && setFunc.isBijective()))
+        
+        if (setFunc.CanApply() && !isInverse || (isInverse && setFunc.isBijective()))
         {
             //If function/inverse is well defined:
+
+            if (collision.tag == "Player")
+            {
+                //If it was the player, they are now in range
+                playerInRange = true;
+                absorbEffect.Play();
+                vaultIndicator.enabled = true;
+            }
 
             BagPickup bag = collision.gameObject.GetComponent<BagPickup>();
 
@@ -102,7 +122,12 @@ public class SetFunctionGate : HasDisplay
     //When object exits trigger
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player") playerInRange = false; //If it was the player, they are now out of range
+        if (collision.tag == "Player")
+        {
+            playerInRange = false; //If it was the player, they are now out of range
+            absorbEffect.Stop();
+            vaultIndicator.enabled = false;
+        }
     }
 
 

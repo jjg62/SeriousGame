@@ -3077,6 +3077,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 401415883474549353, guid: ad1021623317627438fb2070562f9207, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -61.399994
+      objectReference: {fileID: 0}
     - target: {fileID: 1966034121396594284, guid: ad1021623317627438fb2070562f9207, type: 3}
       propertyPath: orthographic size
       value: 5
@@ -3089,6 +3093,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1558426608}
+    - target: {fileID: 4712446166205941928, guid: ad1021623317627438fb2070562f9207, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -202.36719
+      objectReference: {fileID: 0}
     - target: {fileID: 5190612966879981409, guid: ad1021623317627438fb2070562f9207, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3386,6 +3394,14 @@ PrefabInstance:
     - target: {fileID: 2540845213366590630, guid: 2dae4352cbd2a4f40a87f2fb9c97d546, type: 3}
       propertyPath: links.Array.data[2].output
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158356164414175163, guid: 2dae4352cbd2a4f40a87f2fb9c97d546, type: 3}
+      propertyPath: displayOffset.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158356164414175163, guid: 2dae4352cbd2a4f40a87f2fb9c97d546, type: 3}
+      propertyPath: displayOffset.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dae4352cbd2a4f40a87f2fb9c97d546, type: 3}
