@@ -13,6 +13,7 @@ public class InventoryUI : MonoBehaviour
     //Bag image
     [SerializeField]
     private RawImage invIcon;
+    private Vector2 defaultInvIconSize;
 
     //Icon of Q key for dropping bag
     [SerializeField]
@@ -27,6 +28,7 @@ public class InventoryUI : MonoBehaviour
     private void Start()
     {
         playerBagManager = GameObject.FindWithTag("Player").GetComponent<BagManager>();
+        defaultInvIconSize = invIcon.transform.localScale;
     }
 
     //Get items in inventory and display them on the HUD
@@ -86,6 +88,35 @@ public class InventoryUI : MonoBehaviour
     public void PulseSlot(int slot, float size, float duration)
     {
         slots[slot].Pulse(size, duration);
+    }
+
+    //Pulse bag image
+    private IEnumerator bagPulseCoroutine;
+    public void PulseBag()
+    {
+        //Stop the coroutine if already in progress
+        if (bagPulseCoroutine != null) StopCoroutine(bagPulseCoroutine);
+        bagPulseCoroutine = PulseBag(1.6f, 0.4f);
+        StartCoroutine(bagPulseCoroutine);
+    }
+
+    IEnumerator PulseBag(float size, float duration)
+    {
+        Vector2 newScale = new Vector2(size, size);
+
+        //Instantly set scale to target
+        invIcon.transform.localScale = newScale;
+
+        //Then gradually decrease back to normal scale
+        float t = 0;
+        while (t < duration)
+        {
+            invIcon.transform.localScale = Vector2.Lerp(newScale, defaultInvIconSize, t / duration);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        invIcon.transform.localScale = defaultInvIconSize;
     }
 
     //Gradually change colour of the inventory

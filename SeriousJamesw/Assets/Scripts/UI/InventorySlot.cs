@@ -67,7 +67,6 @@ public class InventorySlot : MonoBehaviour
         }
 
         icon.transform.localScale = defaultSize;
-
     }
 
     //Stop any animations and start a new pulse animation

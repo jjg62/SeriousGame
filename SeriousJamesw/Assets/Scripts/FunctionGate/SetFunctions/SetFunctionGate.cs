@@ -151,6 +151,7 @@ public class SetFunctionGate : HasDisplay
             else
             {
                 AudioManager.instance.Play("Fail");
+                HUD.instance.inventory.PulseBag();
             }
 
         }

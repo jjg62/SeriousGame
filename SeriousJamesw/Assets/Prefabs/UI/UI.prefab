@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386964838179832831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -768,7 +768,6 @@ MonoBehaviour:
   back: {fileID: 3807412639642503167}
   invIcon: {fileID: 4351522788327216110}
   bagKeyIcon: {fileID: 6323293576752926333}
-  functionCursor: {fileID: 3807412639989333843}
   slots:
   - {fileID: 3807412640352075252}
   - {fileID: 3254844490132564742}

@@ -124,14 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3c1219ff06a2c4690fd0916e90d9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  con: {fileID: 0}
-  display: {fileID: 0}
   displayPref: {fileID: 6088248406365097000, guid: 7e80591bf7813d04baadf26c60000ad5, type: 3}
-  col: {fileID: 525697292557485551}
-  blockedColour: {r: 0.9058824, g: 0.20784315, b: 0.20784315, a: 0.39607844}
-  passColour: {r: 0.9058824, g: 0.20784315, b: 0.20784315, a: 0.39607844}
   displayOffset: {x: 0, y: 2.4}
+  display: {fileID: 0}
+  con: {fileID: 0}
   displayDistance: 3
+  col: {fileID: 525697292557485551}
+  blockedColour: {r: 0.9058824, g: 0.20784315, b: 0.20784315, a: 0.627451}
+  passColour: {r: 0.9058824, g: 0.20784315, b: 0.20784315, a: 0.2}
 --- !u!1 &525697292557485457
 GameObject:
   m_ObjectHideFlags: 0

@@ -168,7 +168,7 @@ MonoBehaviour:
   - name: World1Music
     clip: {fileID: 8300000, guid: 58549be6a0be10b42917fbfe6dbcf444, type: 3}
     source: {fileID: 0}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     loop: 1
   - name: World3Music

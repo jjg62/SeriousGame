@@ -3043,6 +3043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 9134892019497471121, guid: a48b3db73e89fec48a88833932fa9ef6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -61.399994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a48b3db73e89fec48a88833932fa9ef6, type: 3}
 --- !u!1001 &1380581984
@@ -3416,8 +3420,8 @@ SpriteRenderer:
   m_SortingLayerID: 324955033
   m_SortingLayer: -5
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: b8feea2dbbb42c94794a1435156ff53f, type: 3}
-  m_Color: {r: 0.25882354, g: 0.23529413, b: 0.20784315, a: 1}
+  m_Sprite: {fileID: -14520863135872570, guid: acb8fda7af10fe44cb644730bf0809a9, type: 3}
+  m_Color: {r: 0.7254902, g: 0.6627451, b: 0.5921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
