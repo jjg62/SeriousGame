@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3034310072659049873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3034310072659049879}
+  - component: {fileID: 3034310072659049878}
+  - component: {fileID: 3034310072659049876}
+  - component: {fileID: 2635187272956928929}
+  - component: {fileID: -3324776360337667164}
+  - component: {fileID: 2062182175675380099}
+  m_Layer: 0
+  m_Name: Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3034310072659049879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034310072659049873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3034310072659049878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034310072659049873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b590bee9cdca6469f2ad628786620b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconList:
+  - key: 48
+    pic: {fileID: 21300000, guid: 720a77e1473a99949987f2a29a4287f2, type: 3}
+  - key: 49
+    pic: {fileID: 21300000, guid: 9fa6f7a20559bee4b9063a413cfa0825, type: 3}
+  - key: 98
+    pic: {fileID: 21300000, guid: 4fedfbe973f09e54291b2fa4dcc2821d, type: 3}
+  - key: 101
+    pic: {fileID: 21300000, guid: fc2993e2f96a36d498fcdaa0778ca9a9, type: 3}
+  - key: 123
+    pic: {fileID: 21300000, guid: 1e31688a1bc39374880fe58451b19d99, type: 3}
+  - key: 115
+    pic: {fileID: 21300000, guid: f3f4ec03aadb4da4b8d78759d86ad649, type: 3}
+  - key: 125
+    pic: {fileID: 21300000, guid: 17bb2d4f3195353448c093e51010bd2d, type: 3}
+  - key: 99
+    pic: {fileID: 21300000, guid: 6ecaf8cca1b721048adf806f1bcd847e, type: 3}
+  - key: 61
+    pic: {fileID: 21300000, guid: 476c0ab7742a95942bdc3ad4ecc4c6d4, type: 3}
+  - key: 50
+    pic: {fileID: 21300000, guid: 9f21b222781c5b04c95fdbc1dfa19db2, type: 3}
+  - key: 110
+    pic: {fileID: 21300000, guid: 684abf87a5e24184a8dd8e40e871523a, type: 3}
+  - key: 51
+    pic: {fileID: 21300000, guid: 51695d8ad171f7643b4ee391350167c0, type: 3}
+  - key: 112
+    pic: {fileID: 21300000, guid: 5b3fb5e87b09ae6418cb9ce475be255f, type: 3}
+  - key: 85
+    pic: {fileID: 21300000, guid: 33790a01105092c489997c021ba66a4e, type: 3}
+  - key: 124
+    pic: {fileID: 21300000, guid: 7aabd21346795c745856b3c4853c8a02, type: 3}
+  - key: 117
+    pic: {fileID: 21300000, guid: cecdc6a6bf2f96e4abcf56bb4e22e697, type: 3}
+  - key: 105
+    pic: {fileID: 21300000, guid: a79c1215d1e5e87459923b3cd2ff2490, type: 3}
+  - key: 52
+    pic: {fileID: 21300000, guid: 7f8d5229bd7dd7243a10a53c9f91e90f, type: 3}
+  - key: 53
+    pic: {fileID: 21300000, guid: f92b7ee1d9ca4c4449da3ffba755be19, type: 3}
+  - key: 54
+    pic: {fileID: 21300000, guid: 53d14e9ef166d124ca3ffd446c3892bd, type: 3}
+  - key: 55
+    pic: {fileID: 21300000, guid: aa6d06e60f045cc4c942ee6d16e0b64a, type: 3}
+  - key: 126
+    pic: {fileID: 21300000, guid: 47f0e99377da2854285f7037c26253c3, type: 3}
+--- !u!114 &3034310072659049876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034310072659049873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5442c0622c58ee44a3b64594e036d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FunctionTransform
+    clip: {fileID: 8300000, guid: 90e5c0e94b0e9c54a807313839395c21, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: FunctionSuccess
+    clip: {fileID: 8300000, guid: 2af356819687e834c9338f5bfde1bf19, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: FunctionFail
+    clip: {fileID: 8300000, guid: 7277594664515b1428b50f5060cd209c, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: Pickup
+    clip: {fileID: 8300000, guid: c9e5b5ad3ed835245bbfbfae39614977, type: 3}
+    source: {fileID: 0}
+    volume: 0.3
+    pitch: 0.7
+    loop: 0
+  - name: Drop
+    clip: {fileID: 8300000, guid: 3b8a4094b3ec7024a9e962fa26f6632a, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - name: Fail
+    clip: {fileID: 8300000, guid: f1f217f425cf2704dbbd8b87a9156d5a, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - name: Footstep
+    clip: {fileID: 8300000, guid: e21e43475f5d12f4dbaff71adcc5f334, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - name: Torch
+    clip: {fileID: 8300000, guid: 787e4c49407a5fc40b2064ec693b4765, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 0.8
+    loop: 0
+  - name: FunctionCharge
+    clip: {fileID: 8300000, guid: 37d7f8f26a0055e4dba8d46c074e5b0c, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+  - name: FunctionDash
+    clip: {fileID: 8300000, guid: 5b352a9b9e40b3a4dafc906391f9ea0a, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: World1Music
+    clip: {fileID: 8300000, guid: 58549be6a0be10b42917fbfe6dbcf444, type: 3}
+    source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+  - name: World3Music
+    clip: {fileID: 8300000, guid: 97fa305b97149db41a3d601c3dd00544, type: 3}
+    source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+  - name: World2Music
+    clip: {fileID: 8300000, guid: 4a3170c7e73891e4f9a00e1b8944def1, type: 3}
+    source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+  - name: Error
+    clip: {fileID: 8300000, guid: ed149f46c3b4de94ab535ea38beac9f9, type: 3}
+    source: {fileID: 0}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+--- !u!114 &2635187272956928929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034310072659049873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9e4a9598b44c441a84d9c72686201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 4640502992602926125, guid: 8282cb3d6b435734383855b0be3ee8fe, type: 3}
+  - {fileID: 1431249187820677297, guid: 7ef7e69a79957da42a5b009ab0a58647, type: 3}
+  - {fileID: 6423659934228122035, guid: 5a11848a7fe1d2647bb5093520dd8ae1, type: 3}
+  - {fileID: 8128484377177656399, guid: c4d2818f1e425bf4790d77019e159c44, type: 3}
+  - {fileID: 8957158163131953027, guid: faffb3c715da8934b83d01384d39c24b, type: 3}
+  - {fileID: 1312701625272998878, guid: 63fefff9e7b0b92479363d7a86179399, type: 3}
+  - {fileID: 5813796731562434289, guid: 4f01b9acb58d0b947986662bb76a9ce2, type: 3}
+  - {fileID: 357737971541890986, guid: 900b3e935e798dc4db27254fb2bb1f87, type: 3}
+--- !u!114 &-3324776360337667164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034310072659049873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9de5639bcfc14340b4169bf6e7d0f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2062182175675380099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034310072659049873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: fbf29413c2ffbb94fb6072ca70467ddd, type: 2}
