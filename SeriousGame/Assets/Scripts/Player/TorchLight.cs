@@ -8,6 +8,7 @@ public class TorchLight : MonoBehaviour
 {
     private Light2D torchLight;
     private Light2D globalLight; //Reference to global light which illuminates whole level
+    private CameraFollow mainCamera; //Reference to camera
 
     //Radius of torch light without/with holding space resp.
     private float defaultRadius = 4f;
@@ -23,13 +24,25 @@ public class TorchLight : MonoBehaviour
         //Get references
         torchLight = GetComponent<Light2D>();
         globalLight = GameObject.FindWithTag("Global Light").GetComponent<Light2D>();
+        mainCamera = Camera.main.GetComponent<CameraFollow>();
     }
 
     //Every frame
+    float t = 0;
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            t = Mathf.Min(1, t + Time.deltaTime * 4);
+        }
+        else
+        {
+            t = Mathf.Max(0, t - Time.deltaTime * 4);
+        }
+
         //Linearly interpolate between current light settings and desired (from whether or not space is held)
-        torchLight.pointLightOuterRadius = Mathf.Lerp(torchLight.pointLightOuterRadius, Input.GetKey(KeyCode.Space) ? bigRadius : defaultRadius, Time.deltaTime * 4);
-        globalLight.intensity = Mathf.Lerp(globalLight.intensity, Input.GetKey(KeyCode.Space) ? bigGlobalLight : defaultGlobalLight, Time.deltaTime * 4);
+        torchLight.pointLightOuterRadius = Mathf.Lerp(defaultRadius, bigRadius, t);
+        globalLight.intensity = Mathf.Lerp(defaultGlobalLight, bigGlobalLight, t);
+        mainCamera.SetCameraZoom(t);
     }
 }

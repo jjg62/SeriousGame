@@ -17,7 +17,6 @@ public abstract class Pickup: Interactable
     public float launchAngle;
 
     //The function gate this was launched by (if at all)
-    [HideInInspector]
     public GameObject launchedBy;
 
     //Before first frame
@@ -40,7 +39,7 @@ public abstract class Pickup: Interactable
         else
         {
             //If this pickup came out of a function gate, need to launch
-            StartCoroutine(AfterDrop(launchAngle + Random.Range(-0.3f, 0.3f), 2.5f));
+            StartCoroutine(AfterDrop(launchAngle + Random.Range(-0.3f, 0.3f), 1.75f));
         }
 
     }

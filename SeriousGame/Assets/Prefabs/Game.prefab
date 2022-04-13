@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3034310072659049876}
   - component: {fileID: 2635187272956928929}
   - component: {fileID: -3324776360337667164}
-  - component: {fileID: 2062182175675380099}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -189,6 +188,12 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 0
+  - name: BagDrop
+    clip: {fileID: 8300000, guid: cc0b83691a3efd647b644fc29304beec, type: 3}
+    source: {fileID: 0}
+    volume: 0.8
+    pitch: 1
+    loop: 0
 --- !u!114 &2635187272956928929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,20 +227,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9de5639bcfc14340b4169bf6e7d0f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2062182175675380099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3034310072659049873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: fbf29413c2ffbb94fb6072ca70467ddd, type: 2}

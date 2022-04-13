@@ -23,6 +23,16 @@ public class Podium : IInventoryContainer
         BagPickup bag = collision.gameObject.GetComponent<BagPickup>();
         if(bag != null && currentStoredBag == null) //If object is a dropped bag, and space available
         {
+            //Stop drop movement, and set opacity to full
+            Color c = bag.GetComponentInChildren<SpriteRenderer>().color;
+            c.a = 1;
+            bag.GetComponentInChildren<SpriteRenderer>().color = c;
+            bag.StopAllCoroutines();
+
+            //Play sound effect
+            AudioManager.instance.Play("BagDrop");
+
+
             //Set currently stored bag, give reference of this to the bag for OnDestroy
             absorbEffect.Stop();
             currentStoredBag = bag;

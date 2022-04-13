@@ -18,7 +18,7 @@ public class ConditionEquals : Condition
         //Create string of icons, one for each item the set
         string itemChars = StringFromSet(items);
 
-        return "b={" + itemChars + "}";
+        return invContainer.GetIcon() + "={" + itemChars + "}";
     }
 
     public override bool Test()

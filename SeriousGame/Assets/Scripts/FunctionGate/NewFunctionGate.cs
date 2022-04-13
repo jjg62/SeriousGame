@@ -53,10 +53,6 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField]
     private ParticleSystem absorbEffect;
 
-    //Vault Indicator Prefab
-    [SerializeField]
-    private SpriteRenderer vaultIndicator;
-
 
     //Function Display
     [Header("Display (don't change for inverse)")]
@@ -88,12 +84,6 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
         //Absorb effect should be off by default
         absorbEffect.Stop();
 
-        //Create vault indicator from prefab
-        vaultIndicator = Instantiate(vaultIndicator);
-        vaultIndicator.transform.position = transform.position;
-        vaultIndicator.enabled = false; //Off by default
-
-
         //Display only needs to be instantiated once, not also for inverse
         if (!isInverse)
         {
@@ -114,11 +104,10 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
             //If function/inverse is well-defined:
 
 
-            if (collision.tag == "Player") //If it's the player, they're in range for vault
+            if (collision.tag == "Player") //Start particle effect
             {
                 playerInRange = true;
                 absorbEffect.Play();
-                vaultIndicator.enabled = true;
             }
 
             ItemPickup item = collision.gameObject.GetComponent<ItemPickup>();
@@ -136,9 +125,9 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         if (collision.tag == "Player")
         {
-            playerInRange = false; //If it's the player, they're out of range for vault
+            //Stop particles
+            playerInRange = false;
             absorbEffect.Stop();
-            vaultIndicator.enabled = false;
         }
     }
 
@@ -150,31 +139,36 @@ public class NewFunctionGate : MonoBehaviour, IPointerEnterHandler, IPointerExit
         line.SetPosition(1, display.transform.position);
     }
 
+    //Entrance object tracks when player can vault
+    [SerializeField]
+    private FunctionGateEntrance entrance;
+
+    //Called by the entrance, when the player appraoches gate with empty inventory
+    public void TryVault()
+    {
+        //If not already travelling
+        if (col.enabled && IsWorking())
+        {
+            //Allow passage
+            col.enabled = false;
+
+            //Disable picking up
+            playerInteract.enabled = false;
+
+            //Start vault
+            StartCoroutine(playerVault());
+        }
+    }
+
+    //Does the gate work in this direction
+    public bool IsWorking()
+    {
+        return (!isInverse || rel.isBijective());
+    }
+
     //Every frame
     private void Update()
     {
-        //If in range, press f near gate, and not already travelling
-        if (playerInRange && col.enabled && Input.GetKeyDown(KeyCode.F) && (!isInverse || rel.isBijective()))
-        {
-            //If inventory is empty
-            if(playerBags.GetInventory() == null || playerBags.GetInventory().GetCardinality() == 0)
-            {
-                //Allow passage
-                col.enabled = false;
-
-                //Disable picking up
-                playerInteract.enabled = false;
-
-                //Start vault
-                StartCoroutine(playerVault());
-            }
-            else
-            {
-                HUD.instance.inventory.Pulse(1.6f, 0.4f);
-                AudioManager.instance.Play("Fail");
-            }
-           
-        }
 
         //Only run following block in the main function gate, not also for the inverse
         if (!isInverse)

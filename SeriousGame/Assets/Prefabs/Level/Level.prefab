@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5902444851073238321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966034121396594194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: fbf29413c2ffbb94fb6072ca70467ddd, type: 2}
 --- !u!1 &5790562332741308989
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e743602295ae5e48b2f1e5df15ac49c, type: 3}
+--- !u!1 &1966034121396594194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3551414955307835898, guid: 7e743602295ae5e48b2f1e5df15ac49c, type: 3}
+  m_PrefabInstance: {fileID: 3026956095433607144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1966034121396594287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3551414955307835783, guid: 7e743602295ae5e48b2f1e5df15ac49c, type: 3}
@@ -285,6 +307,10 @@ PrefabInstance:
     - target: {fileID: 3807412640838429210, guid: a48b3db73e89fec48a88833932fa9ef6, type: 3}
       propertyPath: m_Texture
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134892019497471121, guid: a48b3db73e89fec48a88833932fa9ef6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -61.399994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a48b3db73e89fec48a88833932fa9ef6, type: 3}

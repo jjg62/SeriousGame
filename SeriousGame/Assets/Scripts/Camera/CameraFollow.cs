@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 //Make camera follow an object (the player)
 public class CameraFollow : MonoBehaviour
@@ -36,6 +37,9 @@ public class CameraFollow : MonoBehaviour
         startingZ = transform.position.z; //Get value for startingZ
         cam = GetComponent<Camera>();
 
+        //Enable warp effect
+        GetComponent<Volume>().weight = enabled ? 1 : 0;
+
         //Move camera to position of target
         Vector3 pos = target.position;
         pos.z = startingZ; //But stay at startingZ
@@ -55,7 +59,14 @@ public class CameraFollow : MonoBehaviour
         cameraPos.z = startingZ; //But stay at startingZ
         transform.position = cameraPos;
 
-        //Change zoom of camera depending on if space held
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, Input.GetKey(KeyCode.Space) ? spaceZoom : defaultZoom, Time.deltaTime * 4);
+    }
+
+    public void SetCameraZoom(float t)
+    {
+        if (enabled)
+        {
+            //Change zoom of camera between 2 values
+            cam.orthographicSize = Mathf.Lerp(defaultZoom, spaceZoom, t);
+        }
     }
 }
