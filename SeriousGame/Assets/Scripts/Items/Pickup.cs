@@ -33,7 +33,7 @@ public abstract class Pickup: Interactable
         {
             //Pick random angle/speed to drop item at
             float angle = Random.Range(0, 2 * Mathf.PI);
-            float spdRand = Random.Range(0.1f, 0.25f);
+            float spdRand = Random.Range(0.05f, 0.1f);
             StartCoroutine(AfterDrop(angle, spdRand));
         }
         else

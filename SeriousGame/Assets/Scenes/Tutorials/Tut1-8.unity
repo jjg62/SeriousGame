@@ -466,6 +466,9 @@ GameObject:
   - component: {fileID: 543232560}
   - component: {fileID: 543232562}
   - component: {fileID: 543232561}
+  - component: {fileID: 543232565}
+  - component: {fileID: 543232564}
+  - component: {fileID: 543232563}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -1415,7 +1418,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.7254902, g: 0.6627451, b: 0.5921569, a: 1}
+  m_Color: {r: 0.6117647, g: 0.7254902, b: 0.5921569, a: 1}
   m_Origin: {x: -10, y: -9, z: 0}
   m_Size: {x: 18, y: 13, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -1437,6 +1440,133 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!66 &543232563
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543232559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 543232565}
+    m_ColliderPaths:
+    - - X: 80015680
+        Y: -19984326
+      - X: 60015672
+        Y: -19984326
+      - X: 60015672
+        Y: 40015672
+      - X: -100015680
+        Y: 40015672
+      - X: -100015680
+        Y: -60015672
+      - X: -49984328
+        Y: -60015672
+      - X: -49984328
+        Y: -20015674
+      - X: -10015674
+        Y: -20015674
+      - X: -10015674
+        Y: -90015680
+      - X: 80015680
+        Y: -90015680
+    - - X: 15674
+        Y: -79984320
+      - X: 15674
+        Y: -40015672
+      - X: 20015674
+        Y: -40015672
+      - X: 20015674
+        Y: -9984326
+      - X: -60015672
+        Y: -9984326
+      - X: -60015672
+        Y: -49984328
+      - X: -89984320
+        Y: -49984328
+      - X: -89984320
+        Y: 19984326
+      - X: 49984328
+        Y: 19984326
+      - X: 49984328
+        Y: -40015672
+      - X: 69984328
+        Y: -40015672
+      - X: 69984328
+        Y: -79984320
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 8.001538, y: -9.001568}
+      - {x: 8.001538, y: -1.9984326}
+      - {x: 6.0015674, y: -1.9984032}
+      - {x: 6.0015383, y: 4.0015674}
+      - {x: -10.001568, y: 4.0015383}
+      - {x: -10.001538, y: -6.0015674}
+      - {x: -4.9984326, y: -6.0015383}
+      - {x: -4.998403, y: -2.0015674}
+      - {x: -1.0015674, y: -2.001597}
+      - {x: -1.0015382, y: -9.001568}
+    - - {x: 6.998433, y: -7.9984026}
+      - {x: 0.0015674001, y: -7.9984026}
+      - {x: 0.0015968, y: -4.0015674}
+      - {x: 2.0015674, y: -4.0015383}
+      - {x: 2.001538, y: -0.99843264}
+      - {x: -6.0015674, y: -0.9984619}
+      - {x: -6.001597, y: -4.9984326}
+      - {x: -8.998432, y: -4.998403}
+      - {x: -8.998403, y: 1.9984326}
+      - {x: 4.9984326, y: 1.9984032}
+      - {x: 4.998462, y: -4.0015674}
+      - {x: 6.998433, y: -4.001597}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &543232564
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543232559}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &543232565
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543232559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &949662073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,7 +2769,7 @@ SpriteRenderer:
   m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: -14520863135872570, guid: acb8fda7af10fe44cb644730bf0809a9, type: 3}
-  m_Color: {r: 0.7254902, g: 0.6627451, b: 0.5921569, a: 1}
+  m_Color: {r: 0.6117647, g: 0.7254902, b: 0.5921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -80,6 +80,8 @@ public class GreenZone : HasDisplay
         AudioManager.instance.Stop("Footstep");
 
         //Go to next level
-        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%SceneManager.sceneCountInBuildSettings);
+        int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextLevel == Levels.endOfTutorial + 1 || nextLevel > SceneManager.sceneCountInBuildSettings) nextLevel = 0;
+        SceneManager.LoadScene(nextLevel);
     }
 }

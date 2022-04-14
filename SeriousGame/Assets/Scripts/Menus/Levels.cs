@@ -12,6 +12,9 @@ public class Levels : MonoBehaviour
     //Furthest level reached
     private static int progress;
 
+    //ID for last tutorial level
+    public static int endOfTutorial = 28;
+
     public static string currentMusic;
     private static string[] levelMusic; //Song name for each level
 
@@ -19,14 +22,14 @@ public class Levels : MonoBehaviour
     {
         //Init music
         levelMusic = new string[SceneManager.sceneCountInBuildSettings];
-        levelMusic[0] = "MenuMusic";
-        for (int i = 1; i < levelMusic.Length; i++)
+        for (int i = 0; i < levelMusic.Length; i++)
         {
-            if (i < 9) //First world
+            if (i == 0) levelMusic[i] = "MenuMusic";
+            else if ((i > 0 && i < 12) || (i > 28 && i < 34)) //First world
             {
                 levelMusic[i] = "World1Music";
             }
-            else if (i < 17) //Second world
+            else if ((i > 11 && i < 19) || (i > 33 && i < 40)) //Second world
             {
                 levelMusic[i] = "World2Music";
             }
@@ -39,7 +42,8 @@ public class Levels : MonoBehaviour
 
     private void Start()
     {
-        progress = PlayerPrefs.GetInt("Progress", 1); //Load progress when game starts, if no data found, 1 is default
+        progress = PlayerPrefs.GetInt("Progress", endOfTutorial+1); //Load progress when game starts, if no data found, 1 is default
+        progress = endOfTutorial+1;
         unlocked = new bool[SceneManager.sceneCountInBuildSettings]; 
         for(int i = 1; i <= progress; i++)
         {
@@ -52,20 +56,12 @@ public class Levels : MonoBehaviour
     //Checks if music change needed, and changes if so
     public static void ChangeMusic(int levelID)
     {
-        if(currentMusic != levelMusic[levelID])
+        if (currentMusic != levelMusic[levelID])
         {
+            
             AudioManager.instance.Stop(currentMusic);
             AudioManager.instance.Play(levelMusic[levelID]);
             currentMusic = levelMusic[levelID];
-        }
-    }
-
-    private void Update()
-    {
-        //Debug/cheat code -unlock all lvls
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UnlockLevel(24);
         }
     }
 

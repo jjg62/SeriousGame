@@ -23,9 +23,15 @@ public class MainMenu : MonoBehaviour
         menus[1].SetActive(false);
     }
 
+    private void Start()
+    {
+        Levels.ChangeMusic(0);
+    }
+
     //Transition to a different submenu
     public void ChangeMenu(int id)
     {
+        AudioManager.instance.Play("ChangeMenu");
         StartCoroutine(ChangeMenuAnimation(id));
     }
 

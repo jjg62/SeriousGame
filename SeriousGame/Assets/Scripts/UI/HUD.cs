@@ -68,7 +68,7 @@ public class HUD : MonoBehaviour
         soundButtonImg.color = mute ? Color.red : Color.cyan;
         
         //Set volume of music
-        AudioManager.instance.SetVolume(Levels.currentMusic, mute ? 0 : 0.1f);
+        AudioManager.instance.SetVolume(Levels.currentMusic, mute ? 0 : 0.12f);
         //Save player's preference
         PlayerPrefs.SetInt("MusicMute", mute ? 1 : 0);
     }

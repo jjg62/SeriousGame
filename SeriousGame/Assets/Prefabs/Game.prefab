@@ -125,37 +125,37 @@ MonoBehaviour:
   - name: Pickup
     clip: {fileID: 8300000, guid: c9e5b5ad3ed835245bbfbfae39614977, type: 3}
     source: {fileID: 0}
-    volume: 0.3
+    volume: 0.4
     pitch: 0.7
     loop: 0
   - name: Drop
     clip: {fileID: 8300000, guid: 3b8a4094b3ec7024a9e962fa26f6632a, type: 3}
     source: {fileID: 0}
-    volume: 0.5
+    volume: 0.7
     pitch: 1
     loop: 0
   - name: Fail
     clip: {fileID: 8300000, guid: f1f217f425cf2704dbbd8b87a9156d5a, type: 3}
     source: {fileID: 0}
-    volume: 0.5
+    volume: 0.9
     pitch: 1
     loop: 0
   - name: Footstep
     clip: {fileID: 8300000, guid: e21e43475f5d12f4dbaff71adcc5f334, type: 3}
     source: {fileID: 0}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 1
   - name: Torch
     clip: {fileID: 8300000, guid: 787e4c49407a5fc40b2064ec693b4765, type: 3}
     source: {fileID: 0}
-    volume: 0.7
+    volume: 1
     pitch: 0.8
     loop: 0
   - name: FunctionCharge
     clip: {fileID: 8300000, guid: 37d7f8f26a0055e4dba8d46c074e5b0c, type: 3}
     source: {fileID: 0}
-    volume: 0.4
+    volume: 0.7
     pitch: 1
     loop: 0
   - name: FunctionDash
@@ -167,31 +167,43 @@ MonoBehaviour:
   - name: World1Music
     clip: {fileID: 8300000, guid: 58549be6a0be10b42917fbfe6dbcf444, type: 3}
     source: {fileID: 0}
-    volume: 0.1
+    volume: 0.12
     pitch: 1
     loop: 1
   - name: World3Music
     clip: {fileID: 8300000, guid: 97fa305b97149db41a3d601c3dd00544, type: 3}
     source: {fileID: 0}
-    volume: 0.1
+    volume: 0.12
     pitch: 1
     loop: 1
   - name: World2Music
     clip: {fileID: 8300000, guid: 4a3170c7e73891e4f9a00e1b8944def1, type: 3}
     source: {fileID: 0}
-    volume: 0.1
+    volume: 0.12
     pitch: 1
     loop: 1
   - name: Error
     clip: {fileID: 8300000, guid: ed149f46c3b4de94ab535ea38beac9f9, type: 3}
     source: {fileID: 0}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 0
   - name: BagDrop
     clip: {fileID: 8300000, guid: cc0b83691a3efd647b644fc29304beec, type: 3}
     source: {fileID: 0}
     volume: 0.8
+    pitch: 1
+    loop: 0
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: fe2c0644d329bd04bbd4a946ecd357e4, type: 3}
+    source: {fileID: 0}
+    volume: 0.12
+    pitch: 1
+    loop: 1
+  - name: ChangeMenu
+    clip: {fileID: 8300000, guid: 0f932b1c7612bca47ad819a6205b448b, type: 3}
+    source: {fileID: 0}
+    volume: 1
     pitch: 1
     loop: 0
 --- !u!114 &2635187272956928929

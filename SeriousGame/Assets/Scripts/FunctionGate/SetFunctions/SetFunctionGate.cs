@@ -57,10 +57,6 @@ public class SetFunctionGate : HasDisplay
     [SerializeField]
     private ParticleSystem absorbEffect;
 
-    //Vault Indicator Prefab
-    [SerializeField]
-    private SpriteRenderer vaultIndicator;
-
     //Before first frame
     private new void Start()
     {    
@@ -75,11 +71,6 @@ public class SetFunctionGate : HasDisplay
 
         //Absorb effect should be off by default
         absorbEffect.Stop();
-
-        //Create vault indicator from prefab
-        vaultIndicator = Instantiate(vaultIndicator);
-        vaultIndicator.transform.position = transform.position;
-        vaultIndicator.enabled = false; //Off by default
 
         if (!isInverse)
         {
@@ -104,7 +95,6 @@ public class SetFunctionGate : HasDisplay
                 //If it was the player, they are now in range
                 playerInRange = true;
                 absorbEffect.Play();
-                vaultIndicator.enabled = true;
             }
 
             BagPickup bag = collision.gameObject.GetComponent<BagPickup>();
@@ -126,35 +116,35 @@ public class SetFunctionGate : HasDisplay
         {
             playerInRange = false; //If it was the player, they are now out of range
             absorbEffect.Stop();
-            vaultIndicator.enabled = false;
         }
     }
 
+    //Called by the entrance, when the player appraoches gate with empty inventory
+    public void TryVault()
+    {
+        //If not already travelling
+        if (col.enabled && IsWorking())
+        {
+            //Allow passage
+            col.enabled = false;
+
+            //Disable picking up
+            playerInteract.enabled = false;
+
+            //Start vault
+            StartCoroutine(playerVault());
+        }
+    }
+
+    //Does the gate work in this direction
+    public bool IsWorking()
+    {
+        return (!isInverse || setFunc.isBijective());
+    }
 
     //Every frame
     private new void Update()
     {
-        //If not holding bag, press f near gate, and not already travelling
-        if (playerInRange && col.enabled && Input.GetKeyDown(KeyCode.F) && (!isInverse || setFunc.isBijective()))
-        {
-            if (playerBags.GetInventory() == null)
-            {
-                //Allow passage
-                col.enabled = false;
-
-                //Disable picking up
-                playerInteract.enabled = false;
-
-                //Start vault animation
-                StartCoroutine(playerVault());
-            }
-            else
-            {
-                AudioManager.instance.Play("Fail");
-                HUD.instance.inventory.PulseBag();
-            }
-
-        }
         if(!isInverse) base.Update();
     }
 
