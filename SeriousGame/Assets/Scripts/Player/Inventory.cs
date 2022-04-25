@@ -87,7 +87,7 @@ public class Inventory : MonoBehaviour
                 //Play weird sound when duplicate item picked up
                 AudioManager.instance.Play("Error");
                 HUD.instance.inventory.PulseSlot(slot, 1.6f, 0.4f);
-                break;
+                return false; //For now, duplicate items should not be deleted when picked up
             }
             slot++;
         }

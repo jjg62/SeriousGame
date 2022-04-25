@@ -152,7 +152,14 @@ public class BagManager : IInventoryContainer
     //In conditions, this InventoryContainer's icon is a bag
     public override string GetIcon()
     {
-        return "b";
+        //Get colour of inventory, set to grey if player is not holding a bag
+        Inventory inv = GetInventory();
+        Color col;
+
+        if (inv == null) col = Color.grey;
+        else col = inv.colour;
+
+        return "b@" + ColorUtility.ToHtmlStringRGB(col) + "@";
     }
 
     //Get the inventory of the bag with some id

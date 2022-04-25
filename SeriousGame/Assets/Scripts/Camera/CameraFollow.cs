@@ -25,6 +25,7 @@ public class CameraFollow : MonoBehaviour
     private Camera cam;
 
     //Zoom level usually
+    [SerializeField]
     private float defaultZoom = 5f;
 
     //Zoom level when Space held

@@ -15,7 +15,7 @@ public class TorchLight : MonoBehaviour
     private float bigRadius = 7f;
 
     //Brightness of global light without/with holding space resp.
-    private float defaultGlobalLight = 0.325f;
+    private float defaultGlobalLight = 0.35f;
     private float bigGlobalLight = 0.65f;
 
     //Before first frame

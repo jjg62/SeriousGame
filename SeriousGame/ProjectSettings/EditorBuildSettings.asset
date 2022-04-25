@@ -117,14 +117,14 @@ EditorBuildSettings:
     path: Assets/Scenes/World2/Level2-5.unity
     guid: 3f89a729487e91d4296fe7709a5357b1
   - enabled: 1
+    path: Assets/Scenes/World2/Level2-Y.unity
+    guid: a3726c0d47a871844b41f726e3f4b968
+  - enabled: 1
     path: Assets/Scenes/World2/Level2-7.unity
     guid: d42aa3ca41d5edd4e9151943fba9e679
   - enabled: 1
     path: Assets/Scenes/World2/Level2-6.unity
     guid: a31bea61cb0d29347a7a437398cbb5c2
-  - enabled: 1
-    path: Assets/Scenes/World2/Level2-Y.unity
-    guid: a3726c0d47a871844b41f726e3f4b968
   - enabled: 1
     path: Assets/Scenes/World3/Level3-2.unity
     guid: a972b39b72448c4448906d9184cdf0ad

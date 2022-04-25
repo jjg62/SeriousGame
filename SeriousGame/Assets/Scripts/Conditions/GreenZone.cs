@@ -81,7 +81,9 @@ public class GreenZone : HasDisplay
 
         //Go to next level
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextLevel == Levels.endOfTutorial + 1 || nextLevel > SceneManager.sceneCountInBuildSettings) nextLevel = 0;
+        if (nextLevel == Levels.endOfTutorial + 1 || nextLevel >= SceneManager.sceneCountInBuildSettings) nextLevel = 0;
         SceneManager.LoadScene(nextLevel);
     }
+
+
 }

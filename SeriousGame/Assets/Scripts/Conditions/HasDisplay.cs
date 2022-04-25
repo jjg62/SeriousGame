@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 //Used when object needs a display for a condition
 //In particular, GreenZone and RedZone are subclasses of this
-public class HasDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HasDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IInventoryCheck
 {
     //Prefab for the display gameobject
     [SerializeField]
@@ -35,13 +35,13 @@ public class HasDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     protected void Awake()
     {
         con = GetComponent<Condition>();
+        display = Instantiate(displayPref); //Instantiate the prefab and store it in display
     }
 
     //Before first frame
     protected void Start()
     {
-        line = GetComponentInChildren<LineRenderer>();
-        display = Instantiate(displayPref); //Instantiate the prefab and store it in display
+        line = GetComponentInChildren<LineRenderer>();   
         if(con != null) display.SetCondition(con.GetCondString()); //Set the displayed condition
         display.transform.position = transform.position + (Vector3)displayOffset; //Set starting position
         player = GameObject.FindWithTag("Player").transform; //Get reference to player
@@ -86,5 +86,11 @@ public class HasDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerExit(PointerEventData eventData)
     {
         mouseHover = false;
+    }
+
+    public void InventoryCheck(Inventory inv)
+    {
+        //Update condition when ivnentory changes (in particular, the colour of player's bag)
+        display.SetCondition(con.GetCondString());
     }
 }

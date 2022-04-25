@@ -11,7 +11,6 @@ public class ItemPickup : Pickup
     //When picked up
     public override void OnInteract(BagManager bagManager)
     {
-
         //Try to add item to inventory
         if (bagManager.GetInventory() != null && bagManager.GetInventory().AddItem(itemType)){
             //If succesful, destroy this object

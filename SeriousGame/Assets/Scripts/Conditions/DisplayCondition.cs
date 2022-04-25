@@ -95,6 +95,10 @@ public class DisplayCondition : MonoBehaviour
     //Given a string, set up the display with the right icons
     public void SetCondition(string condition)
     {
+        //Get current alpha
+        float a = back.color.a;
+
+
         //Destroy currently displayed icons
         foreach(GameObject s in charSlots)
         {
@@ -187,6 +191,7 @@ public class DisplayCondition : MonoBehaviour
             }
             
         }
+        SetAlpha(a);
     }
 
     //Stop any flashing effects and start a new one

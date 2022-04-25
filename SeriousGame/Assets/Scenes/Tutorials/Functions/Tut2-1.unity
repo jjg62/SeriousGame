@@ -389,6 +389,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2540845213366590630, guid: 2dae4352cbd2a4f40a87f2fb9c97d546, type: 3}
+      propertyPath: codomain.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2540845213366590630, guid: 2dae4352cbd2a4f40a87f2fb9c97d546, type: 3}
       propertyPath: domain.Array.data[0]
       value: 2
       objectReference: {fileID: 0}

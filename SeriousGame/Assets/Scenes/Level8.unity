@@ -812,6 +812,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1305274633}
+    - target: {fileID: 1966034121396594286, guid: ad1021623317627438fb2070562f9207, type: 3}
+      propertyPath: defaultZoom
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966034121396594286, guid: ad1021623317627438fb2070562f9207, type: 3}
+      propertyPath: spaceZoom
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1966034121396594287, guid: ad1021623317627438fb2070562f9207, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.99

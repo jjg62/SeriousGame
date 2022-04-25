@@ -60,7 +60,7 @@ public class RedZone : HasDisplay, IPointerEnterHandler, IPointerExitHandler, II
     }
 
     //Called whenever conditions are updated, e.g. when an inventory is changed
-    public void InventoryCheck(Inventory inv)
+    public new void InventoryCheck(Inventory inv)
     {
         //If condition is passed, disable the collider
         if (con.Test())
@@ -74,5 +74,6 @@ public class RedZone : HasDisplay, IPointerEnterHandler, IPointerExitHandler, II
             col.enabled = true;
             spr.color = blockedColour;
         }
+        base.InventoryCheck(inv);
     }
 }

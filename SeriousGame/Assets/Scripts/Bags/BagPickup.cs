@@ -27,8 +27,8 @@ public class BagPickup : Pickup
             //Only allow bag to be picked up if not in a red zone
             if(bagManager.inRedZone == null)
             {
-                Destroy(gameObject);
                 bagManager.PickupBag(id, colour);
+                Destroy(gameObject);       
             }
             else
             {

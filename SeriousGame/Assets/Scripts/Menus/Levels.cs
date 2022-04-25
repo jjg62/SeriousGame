@@ -43,7 +43,6 @@ public class Levels : MonoBehaviour
     private void Start()
     {
         progress = PlayerPrefs.GetInt("Progress", endOfTutorial+1); //Load progress when game starts, if no data found, 1 is default
-        progress = endOfTutorial+1;
         unlocked = new bool[SceneManager.sceneCountInBuildSettings]; 
         for(int i = 1; i <= progress; i++)
         {

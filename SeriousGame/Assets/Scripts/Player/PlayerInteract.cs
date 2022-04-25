@@ -40,7 +40,9 @@ public class PlayerInteract : MonoBehaviour
     public void AddInRange(Interactable i)
     {
         inRange.Add(i);
-        latest = i; //It becomes the lates
+
+        bool hasBag = bagManager.GetInventory() != null;
+        if (!(i is ItemPickup) || hasBag) latest = i; //It becomes the latest
 
         MoveIndicator(); //Indicator moves to this item
     }
@@ -52,13 +54,25 @@ public class PlayerInteract : MonoBehaviour
         if (latest == i)
         {
             //If it was the latest, select a new pickup
-            if (inRange.Count > 0) latest = inRange[0];
-            else latest = null;
+            latest = FindNewLatest();
 
             //Move indicator to new latest's position
             MoveIndicator();
         }
        
+    }
+
+    //Find the new interactable to move the indicator to, dependent on whether player has bag
+    private Interactable FindNewLatest()
+    {
+
+        bool hasBag = bagManager.GetInventory() != null;
+        foreach(Interactable i in inRange)
+        {
+            //Find first item that player can interact with (items only allowed if player has a bag)
+            if (hasBag || !(i is ItemPickup)) return i;
+        }
+        return null;
     }
 
     //Call OnInteract on selected interactable

@@ -122,7 +122,7 @@ MonoBehaviour:
   launchAngle: 0
   launchedBy: {fileID: 0}
   dropMoveSpeed: 0.5
-  colour: {r: 1, g: 0.42352945, b: 0.3647059, a: 1}
+  colour: {r: 0.9150943, g: 0.46275386, b: 0.038848326, a: 1}
   id: 1
   onPodium: {fileID: 0}
 --- !u!50 &3722936593052915328

@@ -2475,11 +2475,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3722936593052915331, guid: f916f1a7db9288a41b0e31a0b87718e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.87
+      value: -5.23
       objectReference: {fileID: 0}
     - target: {fileID: 3722936593052915331, guid: f916f1a7db9288a41b0e31a0b87718e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.28
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 3722936593052915331, guid: f916f1a7db9288a41b0e31a0b87718e1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4688,6 +4688,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4661911265793606076, guid: 65624bd2891f5ef48a156d3013ae1410, type: 3}
+      propertyPath: displayOffset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4661911265793606078, guid: 65624bd2891f5ef48a156d3013ae1410, type: 3}
       propertyPath: m_Name
       value: GreenZone

@@ -2509,6 +2509,10 @@ PrefabInstance:
       propertyPath: levelCenter.x
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1966034121396594286, guid: ad1021623317627438fb2070562f9207, type: 3}
+      propertyPath: spaceZoom
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3891736056407683553, guid: ad1021623317627438fb2070562f9207, type: 3}
       propertyPath: multipleBagsAllowed
       value: 1
