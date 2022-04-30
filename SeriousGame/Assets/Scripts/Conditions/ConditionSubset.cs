@@ -22,6 +22,6 @@ public class ConditionSubset : Condition
     {
         //Create string of icons, one for each item in the set
         string itemChars = StringFromSet(items);
-        return "bs{"+itemChars+"}";
+        return invContainer.GetIcon() + "s{"+itemChars+"}";
     }
 }

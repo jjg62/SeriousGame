@@ -28,6 +28,7 @@ public class BagPickup : Pickup
             if(bagManager.inRedZone == null)
             {
                 bagManager.PickupBag(id, colour);
+                UpdatePodium();
                 Destroy(gameObject);       
             }
             else
@@ -40,8 +41,7 @@ public class BagPickup : Pickup
         }
     }
 
-    //When object is destroyed
-    private void OnDestroy()
+    private void UpdatePodium()
     {
         //Ensure when bag is picked up/destroyed, podium is cleared
         if(onPodium != null && onPodium.currentStoredBag == this)
@@ -50,6 +50,7 @@ public class BagPickup : Pickup
             onPodium.UpdateConditions(); //Any conditions reliant of the podium should update
             onPodium.StopAllCoroutines(); //Stop bag absorb animation
             onPodium.absorbEffect.Play(); //Restart particles
+            onPodium = null;
         }
         
         HUD.instance.viewSets.Refresh(); //Update the list of bags on HUD

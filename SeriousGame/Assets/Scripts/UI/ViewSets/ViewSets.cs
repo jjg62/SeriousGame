@@ -18,7 +18,7 @@ public class ViewSets : MonoBehaviour
     {
         //Find player
         GameObject player = GameObject.FindWithTag("Player");
-        if (player == null) return;
+        //if (player == null) return;
         //This function is called by BagPickup.OnDestroy(), so need to be careful that all other objects haven't been destroyed too 
         //i.e. at the end of a level
 

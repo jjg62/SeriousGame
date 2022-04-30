@@ -21,6 +21,6 @@ public class ConditionNEOf : Condition
     public override string GetCondString()
     {
         char itemChar = (char)(48 + (int)item);
-        return itemChar + "nb";
+        return itemChar + "n" + invContainer.GetIcon();
     }
 }
